@@ -25,7 +25,7 @@ class DefaultHomeViewModel: HomeViewModel {
 
 	var isLoaded: Bool = false
 
-	var bindToController: () -> () = {}
+	var bindToController: () -> Void = {}
 
 	private var cityRepository = CityRepository()
 

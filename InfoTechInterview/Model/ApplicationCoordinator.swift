@@ -30,7 +30,7 @@ class DefaultApplicationCoordinator: ApplicationCoordinator {
 	}
 
 	func moveToDetails(city: City) {
-		addChild(DefaultCityDetailsCoordinator(navigationController: navigationController))
+		addChild(DefaultCityDetailsCoordinator(navigationController: navigationController, city: city))
 	}
 
 }

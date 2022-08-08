@@ -4,13 +4,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CityDetailsViewController" customModule="InfoTechInterview" customModuleProvider="target">
             <connections>
+                <outlet property="mapView" destination="Ok4-aH-eDW" id="Jew-23-CVC"/>
+                <outlet property="mapViewContainer" destination="pRh-dc-o2S" id="fUm-6v-LK6"/>
+                <outlet property="scrollView" destination="bqn-J3-JZ7" id="i3y-Yb-v2c"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Tdl-w9-qxx"/>
             </connections>
         </placeholder>
@@ -18,8 +20,53 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bqn-J3-JZ7">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pRh-dc-o2S">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                            <subviews>
+                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ok4-aH-eDW">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                </mapView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="Ok4-aH-eDW" firstAttribute="top" secondItem="pRh-dc-o2S" secondAttribute="top" id="Crc-Q1-iJf"/>
+                                <constraint firstAttribute="trailing" secondItem="Ok4-aH-eDW" secondAttribute="trailing" id="Wk2-Z0-vxG"/>
+                                <constraint firstAttribute="height" constant="300" id="bE4-YF-8XN"/>
+                                <constraint firstAttribute="bottom" secondItem="Ok4-aH-eDW" secondAttribute="bottom" id="vWi-OJ-SOX"/>
+                                <constraint firstItem="Ok4-aH-eDW" firstAttribute="leading" secondItem="pRh-dc-o2S" secondAttribute="leading" id="zE4-et-aQa"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03h-yf-neB">
+                            <rect key="frame" x="10" y="320" width="394" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="03h-yf-neB" secondAttribute="bottom" id="bxh-Ol-CDe"/>
+                        <constraint firstItem="Cg1-ZX-dyB" firstAttribute="trailing" secondItem="pRh-dc-o2S" secondAttribute="trailing" id="gKV-79-3Xi"/>
+                        <constraint firstItem="Cg1-ZX-dyB" firstAttribute="trailing" secondItem="03h-yf-neB" secondAttribute="trailing" constant="10" id="pth-LB-kT8"/>
+                        <constraint firstItem="pRh-dc-o2S" firstAttribute="leading" secondItem="Cg1-ZX-dyB" secondAttribute="leading" id="uTd-Fp-604"/>
+                        <constraint firstItem="pRh-dc-o2S" firstAttribute="bottom" secondItem="03h-yf-neB" secondAttribute="top" constant="-20" id="xyn-R5-rPt"/>
+                        <constraint firstItem="03h-yf-neB" firstAttribute="leading" secondItem="Cg1-ZX-dyB" secondAttribute="leading" constant="10" id="zdN-ds-ZQO"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="dSc-Cy-pKv"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="Cg1-ZX-dyB"/>
+                </scrollView>
+            </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="bqn-J3-JZ7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KZh-rh-L3y"/>
+                <constraint firstItem="bqn-J3-JZ7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bjj-66-E6B"/>
+                <constraint firstAttribute="top" secondItem="pRh-dc-o2S" secondAttribute="top" id="qJG-r4-wDx"/>
+                <constraint firstAttribute="trailing" secondItem="bqn-J3-JZ7" secondAttribute="trailing" id="xfL-TP-sLR"/>
+                <constraint firstAttribute="bottom" secondItem="bqn-J3-JZ7" secondAttribute="bottom" id="ziD-IW-zYR"/>
+            </constraints>
             <point key="canvasLocation" x="139" y="70"/>
         </view>
     </objects>

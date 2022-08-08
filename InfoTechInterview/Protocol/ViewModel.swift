@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ViewModel {
-	var bindToController: () -> () { get set }
+	var bindToController: () -> Void { get set }
 }
