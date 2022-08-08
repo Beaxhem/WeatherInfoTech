@@ -20,6 +20,12 @@ class CityDetailsViewController: UIViewController {
 	@IBOutlet weak var temperatureLabel: UILabel!
 	@IBOutlet weak var weatherDescriptionLabel: UILabel!
 
+	@IBOutlet var cells: [UIView]!
+	@IBOutlet weak var minTemperatureLabel: UILabel!
+	@IBOutlet weak var maxTemperatureLabel: UILabel!
+	@IBOutlet weak var windSpeedLabel: UILabel!
+	@IBOutlet weak var humidityLabel: UILabel!
+
 	@IBOutlet weak var mapHeightConstraint: NSLayoutConstraint!
 	@IBOutlet weak var mapTopConstraint: NSLayoutConstraint!
 
@@ -40,6 +46,13 @@ class CityDetailsViewController: UIViewController {
 	override func viewDidDisappear(_ animated: Bool) {
 		super.viewDidDisappear(animated)
 		coordinator?.didHide()
+	}
+
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		for cell in cells {
+			cell.layer.cornerRadius = 15
+		}
 	}
 
 	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -64,6 +77,7 @@ private extension CityDetailsViewController {
 			}
 		}
 		traitCollectionDidChange(nil)
+		setCoordinates(to: viewModel.city)
 	}
 
 }
@@ -71,19 +85,16 @@ private extension CityDetailsViewController {
 private extension CityDetailsViewController {
 
 	func update() {
-		setWeatherData()
-		setCoordinates(to: viewModel.city)
-	}
-
-	func setWeatherData() {
 		cityNameLabel.text = viewModel.city.name
-		if let weatherData = viewModel.weatherData {
-			temperatureLabel.text = "\(weatherData.main.temperature)°"
-			weatherDescriptionLabel.text = weatherData.description
-		} else {
-			temperatureLabel.text = "..."
-			weatherDescriptionLabel.text = ""
-		}
+		guard let weatherData = viewModel.weatherData else { return }
+		let temperature: (Float) -> String = { value in "\(value)°" }
+		temperatureLabel.text = temperature(weatherData.main.temperature)
+		weatherDescriptionLabel.text = weatherData.description
+		minTemperatureLabel.text = temperature(weatherData.main.minTemperature)
+		maxTemperatureLabel.text = temperature(weatherData.main.maxTemperature)
+		windSpeedLabel.text = "\(weatherData.wind.speed) m/s"
+		humidityLabel.text = "\(weatherData.main.humidity)%"
+
 	}
 
 	func setCoordinates(to city: City) {
