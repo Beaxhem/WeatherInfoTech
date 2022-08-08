@@ -18,8 +18,6 @@ class CityDetailsViewController: UIViewController {
 
 	var viewModel: CityDetailsViewModel!
 
-	private var marker: Marker!
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setup()
@@ -51,13 +49,13 @@ private extension CityDetailsViewController {
 private extension CityDetailsViewController {
 
 	func update() {
-		setCoordinates(viewModel.city.coordinates)
+		setCoordinates(to: viewModel.city)
 	}
 
-	func setCoordinates(_ coords: Coordinates) {
-		mapView.setCenter(coords)
-		marker = .init(coordinates: coords)
-		mapView.addAnnotation(marker)
+	func setCoordinates(to city: City) {
+		mapView.setCenter(city.coordinates)
+		mapView.removeAllAnnotations()
+		mapView.addAnnotation(Marker(city: city))
 	}
 
 }

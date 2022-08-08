@@ -8,9 +8,12 @@
 import MapKit
 
 class Marker: NSObject, MKAnnotation {
+	var title: String?
 	let coordinate: CLLocationCoordinate2D
 
-	init(coordinates: Coordinates) {
+	init(city: City) {
+		self.title = city.name
+		let coordinates = city.coordinates
 		self.coordinate = .init(latitude: coordinates.latitude,
 								longitude: coordinates.longitude)
 		super.init()
