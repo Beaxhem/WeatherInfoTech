@@ -11,6 +11,8 @@ class HomeViewController: UIViewController {
 
 	@IBOutlet weak var collectionView: UICollectionView!
 
+	weak var coordinator: ApplicationCoordinator?
+
 	var viewModel: HomeViewModel!
 
 	private let activityIndicator = UIActivityIndicatorView(style: .medium)
@@ -82,6 +84,12 @@ private extension HomeViewController {
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
+
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		guard indexPath.item < viewModel.cities.count else { return }
+		let city = viewModel.cities[indexPath.item]
+		coordinator?.moveToDetails(city: city)
+	}
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		let contentInset = collectionView.contentInset

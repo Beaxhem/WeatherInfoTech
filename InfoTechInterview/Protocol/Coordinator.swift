@@ -7,10 +7,27 @@
 
 import UIKit
 
-protocol Coordinator {
+protocol Coordinator: AnyObject {
 	var navigationController: UINavigationController { get set }
 	var childCoordinators: [Coordinator] { get set }
 	var parentCoordinator: Coordinator? { get set }
 
 	func start()
+}
+
+extension Coordinator {
+
+	func addChild(_ coordinator: Coordinator) {
+		coordinator.parentCoordinator = self
+		childCoordinators.append(coordinator)
+		coordinator.start()
+	}
+
+	func childDidFinish(_ coordinator: Coordinator) {
+		for (index, child) in childCoordinators.enumerated() where child === coordinator {
+			childCoordinators.remove(at: index)
+			break
+		}
+	}
+
 }

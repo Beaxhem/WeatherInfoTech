@@ -7,7 +7,12 @@
 
 import UIKit
 
-class ApplicationCoordinator: Coordinator {
+protocol ApplicationCoordinator: Coordinator {
+	func moveToDetails(city: City)
+}
+
+
+class DefaultApplicationCoordinator: ApplicationCoordinator {
 
 	var navigationController: UINavigationController
 	var childCoordinators: [Coordinator] = []
@@ -19,8 +24,13 @@ class ApplicationCoordinator: Coordinator {
 
 	func start() {
 		let vc = HomeViewController()
+		vc.coordinator = self
 		vc.viewModel = DefaultHomeViewModel()
 		navigationController.pushViewController(vc, animated: false)
+	}
+
+	func moveToDetails(city: City) {
+		addChild(DefaultCityDetailsCoordinator(navigationController: navigationController))
 	}
 
 }

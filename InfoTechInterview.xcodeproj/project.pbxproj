@@ -25,6 +25,9 @@
 		88D86FD328A1525B008DB548 /* SearchResultsQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FD228A1525B008DB548 /* SearchResultsQueue.swift */; };
 		88D86FD628A15331008DB548 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FD528A15331008DB548 /* HomeViewModel.swift */; };
 		88D86FD928A15CB2008DB548 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FD828A15CB2008DB548 /* ImageLoader.swift */; };
+		88D86FDF28A15D16008DB548 /* CityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FDE28A15D16008DB548 /* CityDetailsViewController.swift */; };
+		88D86FE128A15D24008DB548 /* CityDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D86FE028A15D24008DB548 /* CityDetailsViewController.xib */; };
+		88D86FE328A15E79008DB548 /* CityDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FE228A15E79008DB548 /* CityDetailsCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		88D86FD228A1525B008DB548 /* SearchResultsQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsQueue.swift; sourceTree = "<group>"; };
 		88D86FD528A15331008DB548 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		88D86FD828A15CB2008DB548 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		88D86FDE28A15D16008DB548 /* CityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsViewController.swift; sourceTree = "<group>"; };
+		88D86FE028A15D24008DB548 /* CityDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityDetailsViewController.xib; sourceTree = "<group>"; };
+		88D86FE228A15E79008DB548 /* CityDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 		88D86FB728A13990008DB548 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				88D86FDA28A15CFD008DB548 /* CityDetailsViewController */,
 				88D86FB628A13962008DB548 /* HomeViewController */,
 			);
 			path = ViewController;
@@ -191,6 +198,40 @@
 			path = City;
 			sourceTree = "<group>";
 		};
+		88D86FDA28A15CFD008DB548 /* CityDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				88D86FDD28A15D0F008DB548 /* Protocol */,
+				88D86FDC28A15D0A008DB548 /* Model */,
+				88D86FDB28A15D06008DB548 /* View */,
+			);
+			path = CityDetailsViewController;
+			sourceTree = "<group>";
+		};
+		88D86FDB28A15D06008DB548 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				88D86FDE28A15D16008DB548 /* CityDetailsViewController.swift */,
+				88D86FE028A15D24008DB548 /* CityDetailsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		88D86FDC28A15D0A008DB548 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88D86FE228A15E79008DB548 /* CityDetailsCoordinator.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		88D86FDD28A15D0F008DB548 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,6 +294,7 @@
 				88D86FD128A14286008DB548 /* CityCell.xib in Resources */,
 				88D86FA928A1372D008DB548 /* Assets.xcassets in Resources */,
 				88D86FBF28A13A52008DB548 /* city_list.json in Resources */,
+				88D86FE128A15D24008DB548 /* CityDetailsViewController.xib in Resources */,
 				88D86FB528A138BE008DB548 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +316,8 @@
 				88D86FD628A15331008DB548 /* HomeViewModel.swift in Sources */,
 				88D86FCC28A1406E008DB548 /* ApplicationCoordinator.swift in Sources */,
 				88D86FC428A13CEC008DB548 /* DefaultHomeViewModel.swift in Sources */,
+				88D86FDF28A15D16008DB548 /* CityDetailsViewController.swift in Sources */,
+				88D86FE328A15E79008DB548 /* CityDetailsCoordinator.swift in Sources */,
 				88D86FA228A13729008DB548 /* SceneDelegate.swift in Sources */,
 				88D86FC828A13D35008DB548 /* CityRepository.swift in Sources */,
 				88D86FD928A15CB2008DB548 /* ImageLoader.swift in Sources */,
