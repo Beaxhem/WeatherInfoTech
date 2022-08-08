@@ -14,6 +14,7 @@ class CityDetailsViewController: UIViewController {
 	@IBOutlet weak var mapViewContainer: UIView!
 	@IBOutlet weak var mapView: MKMapView!
 	@IBOutlet weak var imageView: UIImageView!
+	@IBOutlet weak var gradientView: GradientView!
 
 	@IBOutlet weak var cityNameLabel: UILabel!
 	@IBOutlet weak var temperatureLabel: UILabel!
@@ -36,6 +37,13 @@ class CityDetailsViewController: UIViewController {
 		coordinator?.didHide()
 	}
 
+	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+		super.traitCollectionDidChange(previousTraitCollection)
+		let alpha = traitCollection.userInterfaceStyle == .dark ? 1 : 0.3
+		let bottomColor: UIColor = .black.withAlphaComponent(alpha)
+		gradientView.colors = [.clear, bottomColor]
+	}
+
 }
 
 private extension CityDetailsViewController {
@@ -55,6 +63,7 @@ private extension CityDetailsViewController {
 				self?.update()
 			}
 		}
+		traitCollectionDidChange(nil)
 	}
 
 }

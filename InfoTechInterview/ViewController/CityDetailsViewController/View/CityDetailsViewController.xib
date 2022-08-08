@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CityDetailsViewController" customModule="InfoTechInterview" customModuleProvider="target">
             <connections>
                 <outlet property="cityNameLabel" destination="sml-nb-mNE" id="R2i-eu-Yqo"/>
+                <outlet property="gradientView" destination="cbD-fd-vZk" id="djE-Na-Q6i"/>
                 <outlet property="imageView" destination="SKr-Dt-fp0" id="mhb-OM-AUB"/>
                 <outlet property="mapHeightConstraint" destination="bE4-YF-8XN" id="wip-n2-GOw"/>
                 <outlet property="mapTopConstraint" destination="Crc-Q1-iJf" id="Ypu-vQ-mMK"/>

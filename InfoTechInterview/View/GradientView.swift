@@ -11,6 +11,12 @@ class GradientView: UIView {
 
 	override class var layerClass: AnyClass { CAGradientLayer.self }
 
+	var colors: [UIColor] = [.clear, .black] {
+		didSet {
+			setupView()
+		}
+	}
+
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		setupView()
@@ -23,7 +29,7 @@ class GradientView: UIView {
 
 	func setupView() {
 		guard let layer = layer as? CAGradientLayer else { return }
-		layer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+		layer.colors = colors.map { $0.cgColor }
 		layer.locations = [0, 1]
 	}
 
