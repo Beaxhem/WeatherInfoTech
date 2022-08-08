@@ -51,7 +51,9 @@ private extension CityDetailsViewController {
 		mapView.isUserInteractionEnabled = false
 		mapHeightConstraint.constant = Constants.mapViewHeight
 		viewModel.bindToController = { [weak self] in
-			self?.update()
+			DispatchQueue.main.async { [weak self] in 
+				self?.update()
+			}
 		}
 	}
 

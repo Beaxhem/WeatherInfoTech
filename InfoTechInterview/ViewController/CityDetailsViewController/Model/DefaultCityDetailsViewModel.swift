@@ -19,6 +19,12 @@ class DefaultCityDetailsViewModel: CityDetailsViewModel {
 
 	var bindToController: () -> Void = {}
 
+	private var url: URL? {
+		let coords = city.coordinates
+		let apiKey = "1074fc90423e5375fce252f0822327e6"
+		return URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(coords.latitude)&lon=\(coords.longitude)&units=metric&appid=\(apiKey)")
+	}
+
 	init(city: City) {
 		self.city = city
 		fetchWeatherDetails { [weak self] weatherData in
@@ -27,13 +33,10 @@ class DefaultCityDetailsViewModel: CityDetailsViewModel {
 	}
 
 	func fetchWeatherDetails(completion: @escaping (WeatherData) -> Void) {
-		let coords = city.coordinates
-		let apiKey = "1074fc90423e5375fce252f0822327e6"
-		guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(coords.latitude)&lon=\(coords.longitude)&appid=\(apiKey)") else {
+		guard let url = url else {
 			return
 		}
-
-		URLSession.shared.dataTask(with: url) { data, response, error in
+		let task = URLSession.shared.dataTask(with: url) { data, response, error in
 			if let error = error {
 				print(error)
 				return
@@ -44,13 +47,15 @@ class DefaultCityDetailsViewModel: CityDetailsViewModel {
 				return
 			}
 
-			guard let data = data,
-				  let weatherData = try? JSONDecoder().decode(WeatherData.self, from: data) else {
-				return
+			guard let data = data else { return }
+			do {
+				let weatherData = try JSONDecoder().decode(WeatherData.self, from: data)
+				completion(weatherData)
+			} catch {
+				print(error)
 			}
-
-			completion(weatherData)
 		}
+		task.resume()
 	}
 
 }

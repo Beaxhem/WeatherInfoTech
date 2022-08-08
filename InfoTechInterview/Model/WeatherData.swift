@@ -9,9 +9,9 @@ import Foundation
 
 struct WeatherData: Decodable {
 
-	var description: String { weather.main }
+	var description: String? { weather.first?.main }
 
-	var weather: Weather
+	var weather: [Weather]
 	var main: Main
 	var wind: Wind
 
@@ -33,7 +33,7 @@ extension WeatherData {
 		var maxTemperature: Float
 		var humidity: Float
 
-		enum CodingKyes: String, CodingKey {
+		enum CodingKeys: String, CodingKey {
 			case temperature = "temp"
 			case minTemperature = "temp_min"
 			case maxTemperature = "temp_max"
