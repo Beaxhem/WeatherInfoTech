@@ -15,6 +15,7 @@ extension MKMapView {
 										latitudinalMeters: 20000,
 										longitudinalMeters: 20000)
 		setRegion(region, animated: animated)
+		setCameraBoundary(.init(coordinateRegion: region), animated: false)
 	}
 
 	func removeAllAnnotations() {
