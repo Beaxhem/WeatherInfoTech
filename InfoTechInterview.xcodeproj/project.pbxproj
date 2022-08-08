@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88CC659D28A1894300290515 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC659C28A1894300290515 /* GradientView.swift */; };
 		88D86FA028A13729008DB548 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86F9F28A13729008DB548 /* AppDelegate.swift */; };
 		88D86FA228A13729008DB548 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FA128A13729008DB548 /* SceneDelegate.swift */; };
 		88D86FA428A13729008DB548 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FA328A13729008DB548 /* HomeViewController.swift */; };
@@ -33,9 +34,11 @@
 		88D86FEB28A16DBA008DB548 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FEA28A16DBA008DB548 /* WeatherData.swift */; };
 		88D86FED28A16DDD008DB548 /* CityDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FEC28A16DDD008DB548 /* CityDetailsViewModel.swift */; };
 		88D86FEF28A16DED008DB548 /* DefaultCityDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FEE28A16DED008DB548 /* DefaultCityDetailsViewModel.swift */; };
+		88D86FF128A180A8008DB548 /* Highlightable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FF028A180A8008DB548 /* Highlightable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		88CC659C28A1894300290515 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		88D86F9C28A13729008DB548 /* InfoTechInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfoTechInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88D86F9F28A13729008DB548 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88D86FA128A13729008DB548 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		88D86FEA28A16DBA008DB548 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		88D86FEC28A16DDD008DB548 /* CityDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsViewModel.swift; sourceTree = "<group>"; };
 		88D86FEE28A16DED008DB548 /* DefaultCityDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCityDetailsViewModel.swift; sourceTree = "<group>"; };
+		88D86FF028A180A8008DB548 /* Highlightable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlightable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88CC659B28A1893800290515 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				88CC659C28A1894300290515 /* GradientView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		88D86F9328A13729008DB548 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +112,7 @@
 				88D86FB728A13990008DB548 /* ViewController */,
 				88D86FC028A13B2E008DB548 /* Protocol */,
 				88D86FBA28A139EF008DB548 /* Model */,
+				88CC659B28A1893800290515 /* View */,
 				88D86FB328A13795008DB548 /* InfoTechInterview */,
 				88D86FBD28A13A47008DB548 /* Resources */,
 				88D86FAA28A1372D008DB548 /* LaunchScreen.storyboard */,
@@ -181,6 +194,7 @@
 			children = (
 				88D86FC128A13B3A008DB548 /* ViewModel.swift */,
 				88D86FC928A1405C008DB548 /* Coordinator.swift */,
+				88D86FF028A180A8008DB548 /* Highlightable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -331,6 +345,7 @@
 			files = (
 				88D86FCA28A1405C008DB548 /* Coordinator.swift in Sources */,
 				88D86FA428A13729008DB548 /* HomeViewController.swift in Sources */,
+				88CC659D28A1894300290515 /* GradientView.swift in Sources */,
 				88D86FD328A1525B008DB548 /* SearchResultsQueue.swift in Sources */,
 				88D86FCF28A14272008DB548 /* CityCell.swift in Sources */,
 				88D86FA028A13729008DB548 /* AppDelegate.swift in Sources */,
@@ -340,6 +355,7 @@
 				88D86FD628A15331008DB548 /* HomeViewModel.swift in Sources */,
 				88D86FCC28A1406E008DB548 /* ApplicationCoordinator.swift in Sources */,
 				88D86FC428A13CEC008DB548 /* DefaultHomeViewModel.swift in Sources */,
+				88D86FF128A180A8008DB548 /* Highlightable.swift in Sources */,
 				88D86FDF28A15D16008DB548 /* CityDetailsViewController.swift in Sources */,
 				88D86FE628A16D7E008DB548 /* MKMapView.swift in Sources */,
 				88D86FE328A15E79008DB548 /* CityDetailsCoordinator.swift in Sources */,

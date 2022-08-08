@@ -15,6 +15,10 @@ class CityDetailsViewController: UIViewController {
 	@IBOutlet weak var mapView: MKMapView!
 	@IBOutlet weak var imageView: UIImageView!
 
+	@IBOutlet weak var cityNameLabel: UILabel!
+	@IBOutlet weak var temperatureLabel: UILabel!
+	@IBOutlet weak var weatherDescriptionLabel: UILabel!
+
 	@IBOutlet weak var mapHeightConstraint: NSLayoutConstraint!
 	@IBOutlet weak var mapTopConstraint: NSLayoutConstraint!
 
@@ -50,12 +54,25 @@ private extension CityDetailsViewController {
 			self?.update()
 		}
 	}
+
 }
 
 private extension CityDetailsViewController {
 
 	func update() {
+		setWeatherData()
 		setCoordinates(to: viewModel.city)
+	}
+
+	func setWeatherData() {
+		cityNameLabel.text = viewModel.city.name
+		if let weatherData = viewModel.weatherData {
+			temperatureLabel.text = "\(weatherData.main.temperature)°"
+			weatherDescriptionLabel.text = weatherData.description
+		} else {
+			temperatureLabel.text = "..."
+			weatherDescriptionLabel.text = ""
+		}
 	}
 
 	func setCoordinates(to city: City) {

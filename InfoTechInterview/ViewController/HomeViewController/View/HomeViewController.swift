@@ -99,18 +99,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 	}
 
 	func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-		let cell = collectionView.cellForItem(at: indexPath)
-		UIView.animate(withDuration: 0.1, delay: 0, options: [.beginFromCurrentState, .allowUserInteraction]) { [weak cell] in
-			cell?.transform = .init(scaleX: 0.95, y: 0.95)
-		}
-
+		(collectionView.cellForItem(at: indexPath) as? Highlightable)?.highlight()
 	}
 
 	func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-		let cell = collectionView.cellForItem(at: indexPath)
-		UIView.animate(withDuration: 0.1, delay: 0, options: [.beginFromCurrentState, .allowUserInteraction]) { [weak cell] in
-			cell?.transform = .identity
-		}
+		(collectionView.cellForItem(at: indexPath) as? Highlightable)?.unhighlight()
 	}
 
 }

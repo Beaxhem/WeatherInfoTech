@@ -28,3 +28,5 @@ class CityCell: UICollectionViewCell {
 	}
 
 }
+
+extension CityCell: Highlightable { }
