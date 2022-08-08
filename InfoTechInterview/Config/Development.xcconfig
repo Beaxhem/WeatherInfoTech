@@ -7,4 +7,5 @@
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
-API_KEY=1074fc90423e5375fce252f0822327e6
+
+API_KEY=1074fc90423e5375fce252f0822327e6 // leaving it for faster project evaluation

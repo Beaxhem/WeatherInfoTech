@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		88CC659D28A1894300290515 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC659C28A1894300290515 /* GradientView.swift */; };
 		88CC65A128A18C9A00290515 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC65A028A18C9A00290515 /* Config.swift */; };
+		88CC65A228A18F8900290515 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 88CC659F28A18C8000290515 /* Development.xcconfig */; };
 		88D86FA028A13729008DB548 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86F9F28A13729008DB548 /* AppDelegate.swift */; };
 		88D86FA228A13729008DB548 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FA128A13729008DB548 /* SceneDelegate.swift */; };
 		88D86FA428A13729008DB548 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FA328A13729008DB548 /* HomeViewController.swift */; };
@@ -340,6 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88CC65A228A18F8900290515 /* Development.xcconfig in Resources */,
 				88D86FAC28A1372D008DB548 /* LaunchScreen.storyboard in Resources */,
 				88D86FD128A14286008DB548 /* CityCell.xib in Resources */,
 				88D86FA928A1372D008DB548 /* Assets.xcassets in Resources */,
