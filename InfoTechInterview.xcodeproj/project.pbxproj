@@ -514,6 +514,7 @@
 		};
 		88D86FB128A1372D008DB548 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88CC659F28A18C8000290515 /* Development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -543,6 +544,7 @@
 		};
 		88D86FB228A1372D008DB548 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88CC659F28A18C8000290515 /* Development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
