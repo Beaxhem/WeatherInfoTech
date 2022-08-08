@@ -15,18 +15,27 @@ class HomeViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		setupView()
-		setupCollectionView()
+		setup()
 	}
 
 }
 
 private extension HomeViewController {
 
+	func setup() {
+		setupView()
+		setupSearchController()
+		setupCollectionView()
+	}
+
 	func setupView() {
 		title = "Home"
+		definesPresentationContext = true
+		navigationItem.hidesSearchBarWhenScrolling = false
 		viewModel.bindToController = { [weak self] in
-			self?.collectionView.reloadData()
+			DispatchQueue.main.async {
+				self?.collectionView.reloadData()
+			}
 		}
 	}
 
@@ -39,6 +48,14 @@ private extension HomeViewController {
 		collectionView.register(UINib(nibName: cityCellIdentifier,
 									  bundle: .main),
 								forCellWithReuseIdentifier: cityCellIdentifier)
+	}
+
+	func setupSearchController() {
+		let searchController = UISearchController(searchResultsController: nil)
+		searchController.searchResultsUpdater = self
+		searchController.obscuresBackgroundDuringPresentation = false
+		searchController.searchBar.placeholder = "Search cities"
+		navigationItem.searchController = searchController
 	}
 
 }
@@ -87,6 +104,17 @@ extension HomeViewController: UICollectionViewDataSource {
 		let city = viewModel.cities[indexPath.item]
 		cell.update(city: city)
 		return cell
+	}
+
+}
+
+extension HomeViewController: UISearchResultsUpdating {
+
+	func updateSearchResults(for searchController: UISearchController) {
+		let query = searchController.searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+		if let query = query {
+			viewModel.query = query
+		}
 	}
 
 }

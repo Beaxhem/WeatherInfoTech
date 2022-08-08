@@ -22,6 +22,7 @@
 		88D86FCC28A1406E008DB548 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FCB28A1406E008DB548 /* ApplicationCoordinator.swift */; };
 		88D86FCF28A14272008DB548 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FCE28A14272008DB548 /* CityCell.swift */; };
 		88D86FD128A14286008DB548 /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D86FD028A14286008DB548 /* CityCell.xib */; };
+		88D86FD328A1525B008DB548 /* SearchResultsQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FD228A1525B008DB548 /* SearchResultsQueue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		88D86FCB28A1406E008DB548 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		88D86FCE28A14272008DB548 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		88D86FD028A14286008DB548 /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
+		88D86FD228A1525B008DB548 /* SearchResultsQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsQueue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				88D86FC528A13CFF008DB548 /* City.swift */,
 				88D86FC728A13D35008DB548 /* CityRepository.swift */,
 				88D86FCB28A1406E008DB548 /* ApplicationCoordinator.swift */,
+				88D86FD228A1525B008DB548 /* SearchResultsQueue.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			files = (
 				88D86FCA28A1405C008DB548 /* Coordinator.swift in Sources */,
 				88D86FA428A13729008DB548 /* HomeViewController.swift in Sources */,
+				88D86FD328A1525B008DB548 /* SearchResultsQueue.swift in Sources */,
 				88D86FCF28A14272008DB548 /* CityCell.swift in Sources */,
 				88D86FA028A13729008DB548 /* AppDelegate.swift in Sources */,
 				88D86FC628A13CFF008DB548 /* City.swift in Sources */,
@@ -392,7 +396,6 @@
 				INFOPLIST_FILE = InfoTechInterview/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -422,7 +425,6 @@
 				INFOPLIST_FILE = InfoTechInterview/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
