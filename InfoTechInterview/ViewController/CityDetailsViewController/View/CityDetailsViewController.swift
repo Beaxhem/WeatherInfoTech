@@ -27,9 +27,14 @@ class CityDetailsViewController: UIViewController {
 
 	var viewModel: CityDetailsViewModel!
 
+	private var mapHeight: CGFloat {
+		view.frame.height / 3
+	}
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		setup()
+		setupView()
+		update()
 	}
 
 	override func viewDidDisappear(_ animated: Bool) {
@@ -48,16 +53,11 @@ class CityDetailsViewController: UIViewController {
 
 private extension CityDetailsViewController {
 
-	func setup() {
-		setupView()
-		update()
-	}
-
 	func setupView() {
 		scrollView.delegate = self
 		scrollView.alwaysBounceVertical = true
 		mapView.isUserInteractionEnabled = false
-		mapHeightConstraint.constant = Constants.mapViewHeight
+		mapHeightConstraint.constant = mapHeight
 		viewModel.bindToController = { [weak self] in
 			DispatchQueue.main.async { [weak self] in 
 				self?.update()
@@ -114,19 +114,11 @@ extension CityDetailsViewController: UIScrollViewDelegate {
 
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		if scrollView.contentOffset.y < 0.0 {
-			mapHeightConstraint.constant = Constants.mapViewHeight - scrollView.contentOffset.y
+			mapHeightConstraint.constant = mapHeight - scrollView.contentOffset.y
 		} else {
-			mapHeightConstraint.constant = Constants.mapViewHeight - self.scrollView.contentOffset.y
+			mapHeightConstraint.constant = mapHeight - self.scrollView.contentOffset.y
 			mapTopConstraint?.constant = view.frame.origin.y
 		}
-	}
-
-}
-
-extension CityDetailsViewController {
-
-	enum Constants {
-		static let mapViewHeight: CGFloat = 200
 	}
 
 }
