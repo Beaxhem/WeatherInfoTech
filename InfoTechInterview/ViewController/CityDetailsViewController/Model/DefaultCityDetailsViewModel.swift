@@ -21,7 +21,7 @@ class DefaultCityDetailsViewModel: CityDetailsViewModel {
 
 	private var url: URL? {
 		let coords = city.coordinates
-		let apiKey = "1074fc90423e5375fce252f0822327e6"
+		let apiKey = Configuration.apiKey
 		return URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(coords.latitude)&lon=\(coords.longitude)&units=metric&appid=\(apiKey)")
 	}
 

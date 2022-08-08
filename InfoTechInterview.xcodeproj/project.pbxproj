@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		88CC659D28A1894300290515 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC659C28A1894300290515 /* GradientView.swift */; };
+		88CC65A128A18C9A00290515 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CC65A028A18C9A00290515 /* Config.swift */; };
 		88D86FA028A13729008DB548 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86F9F28A13729008DB548 /* AppDelegate.swift */; };
 		88D86FA228A13729008DB548 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FA128A13729008DB548 /* SceneDelegate.swift */; };
 		88D86FA428A13729008DB548 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FA328A13729008DB548 /* HomeViewController.swift */; };
@@ -39,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		88CC659C28A1894300290515 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		88CC659F28A18C8000290515 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		88CC65A028A18C9A00290515 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		88D86F9C28A13729008DB548 /* InfoTechInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfoTechInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88D86F9F28A13729008DB548 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88D86FA128A13729008DB548 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +92,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		88CC659E28A18C7100290515 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				88CC659F28A18C8000290515 /* Development.xcconfig */,
+				88CC65A028A18C9A00290515 /* Config.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		88D86F9328A13729008DB548 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +120,7 @@
 		88D86F9E28A13729008DB548 /* InfoTechInterview */ = {
 			isa = PBXGroup;
 			children = (
+				88CC659E28A18C7100290515 /* Config */,
 				88D86FE428A16D73008DB548 /* Extension */,
 				88D86FB728A13990008DB548 /* ViewController */,
 				88D86FC028A13B2E008DB548 /* Protocol */,
@@ -361,6 +374,7 @@
 				88D86FE328A15E79008DB548 /* CityDetailsCoordinator.swift in Sources */,
 				88D86FED28A16DDD008DB548 /* CityDetailsViewModel.swift in Sources */,
 				88D86FA228A13729008DB548 /* SceneDelegate.swift in Sources */,
+				88CC65A128A18C9A00290515 /* Config.swift in Sources */,
 				88D86FEF28A16DED008DB548 /* DefaultCityDetailsViewModel.swift in Sources */,
 				88D86FC828A13D35008DB548 /* CityRepository.swift in Sources */,
 				88D86FEB28A16DBA008DB548 /* WeatherData.swift in Sources */,
