@@ -11,6 +11,8 @@ class HomeViewController: UIViewController {
 
 	@IBOutlet weak var collectionView: UICollectionView!
 
+	private let activityIndicator = UIActivityIndicatorView(style: .medium)
+
 	var viewModel: HomeViewModel!
 
 	override func viewDidLoad() {
@@ -33,13 +35,14 @@ private extension HomeViewController {
 		definesPresentationContext = true
 		navigationItem.hidesSearchBarWhenScrolling = false
 		viewModel.bindToController = { [weak self] in
-			DispatchQueue.main.async {
-				self?.collectionView.reloadData()
-			}
+			self?.update()
 		}
 	}
 
 	func setupCollectionView() {
+		collectionView.backgroundView = activityIndicator
+		activityIndicator.hidesWhenStopped = true
+		activityIndicator.startAnimating()
 		collectionView.delegate = self
 		collectionView.dataSource = self
 		collectionView.delaysContentTouches = false
@@ -56,6 +59,22 @@ private extension HomeViewController {
 		searchController.obscuresBackgroundDuringPresentation = false
 		searchController.searchBar.placeholder = "Search cities"
 		navigationItem.searchController = searchController
+	}
+
+}
+
+private extension HomeViewController {
+
+	func update() {
+		DispatchQueue.main.async { [weak self] in
+			guard let self = self else { return }
+			self.collectionView.reloadData()
+			if self.viewModel.isLoaded {
+				self.activityIndicator.stopAnimating()
+			} else {
+				self.activityIndicator.startAnimating()
+			}
+		}
 	}
 
 }

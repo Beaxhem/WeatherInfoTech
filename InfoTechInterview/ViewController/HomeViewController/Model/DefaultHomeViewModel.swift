@@ -23,6 +23,8 @@ class DefaultHomeViewModel: HomeViewModel {
 		}
 	}
 
+	var isLoaded: Bool = false
+
 	var bindToController: () -> () = {}
 
 	private var cityRepository = CityRepository()
@@ -31,6 +33,10 @@ class DefaultHomeViewModel: HomeViewModel {
 
 	init() {
 		self.cities = cityRepository.cities
+		cityRepository.getAll { [weak self] cities in
+			self?.isLoaded = true
+			self?.cities = cities
+		}
 	}
 
 	func filter(for query: String) {

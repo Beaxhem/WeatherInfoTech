@@ -11,17 +11,17 @@ class CityRepository {
 
 	var cities: [City] = []
 
-	init() {
-		parse()
-	}
+	func getAll(completion: @escaping ([City]) -> Void) {
+		DispatchQueue.global(qos: .utility).async { [weak self] in
+			guard let path = Bundle.main.path(forResource: "city_list", ofType: "json") else { return }
+			let url = URL(fileURLWithPath: path)
 
-	func parse() {
-		guard let path = Bundle.main.path(forResource: "city_list", ofType: "json") else { return }
-		let url = URL(fileURLWithPath: path)
+			guard let data = try? Data(contentsOf: url, options: [.mappedIfSafe]) else { return }
 
-		guard let data = try? Data(contentsOf: url, options: [.mappedIfSafe]) else { return }
-
-		cities = (try? JSONDecoder().decode([City].self, from: data)) ?? []
+			let cities = (try? JSONDecoder().decode([City].self, from: data)) ?? []
+			self?.cities = cities
+			completion(cities)
+		}
 	}
 
 }
