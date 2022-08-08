@@ -10,6 +10,13 @@ import UIKit
 class CityCell: UICollectionViewCell {
 
 	@IBOutlet weak var cityNameLabel: UILabel!
+	@IBOutlet weak var imageView: UIImageView!
+
+	var image: UIImage? {
+		didSet {
+			imageView.image = image
+		}
+	}
 
 	override func awakeFromNib() {
 		super.awakeFromNib()

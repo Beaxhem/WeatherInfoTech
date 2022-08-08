@@ -11,9 +11,11 @@ class HomeViewController: UIViewController {
 
 	@IBOutlet weak var collectionView: UICollectionView!
 
+	var viewModel: HomeViewModel!
+
 	private let activityIndicator = UIActivityIndicatorView(style: .medium)
 
-	var viewModel: HomeViewModel!
+	private let imageLoader = ImageLoader()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -85,7 +87,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 		let contentInset = collectionView.contentInset
 		let width = collectionView.bounds.width - contentInset.left - contentInset.right
 		return .init(width: width,
-			  height: 50)
+			  height: 80)
 	}
 
 	func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
@@ -123,6 +125,17 @@ extension HomeViewController: UICollectionViewDataSource {
 		let city = viewModel.cities[indexPath.item]
 		cell.update(city: city)
 		return cell
+	}
+
+	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+		guard let cell = cell as? CityCell else { return }
+		let item = indexPath.item + 1
+		let imageName = (item == 1 || item % 2 == 0) ? "Temp3.png" : "Temp1.png"
+		imageLoader.loadImage(name: imageName) { [weak cell] image in
+			DispatchQueue.main.async { [weak cell, weak image] in
+				cell?.image = image
+			}
+		}
 	}
 
 }
