@@ -15,7 +15,7 @@
 		88D86FB528A138BE008DB548 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D86FB428A138BE008DB548 /* HomeViewController.xib */; };
 		88D86FBF28A13A52008DB548 /* city_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 88D86FBE28A13A52008DB548 /* city_list.json */; };
 		88D86FC228A13B3A008DB548 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FC128A13B3A008DB548 /* ViewModel.swift */; };
-		88D86FC428A13CEC008DB548 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FC328A13CEC008DB548 /* HomeViewModel.swift */; };
+		88D86FC428A13CEC008DB548 /* DefaultHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FC328A13CEC008DB548 /* DefaultHomeViewModel.swift */; };
 		88D86FC628A13CFF008DB548 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FC528A13CFF008DB548 /* City.swift */; };
 		88D86FC828A13D35008DB548 /* CityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FC728A13D35008DB548 /* CityRepository.swift */; };
 		88D86FCA28A1405C008DB548 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FC928A1405C008DB548 /* Coordinator.swift */; };
@@ -23,6 +23,7 @@
 		88D86FCF28A14272008DB548 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FCE28A14272008DB548 /* CityCell.swift */; };
 		88D86FD128A14286008DB548 /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D86FD028A14286008DB548 /* CityCell.xib */; };
 		88D86FD328A1525B008DB548 /* SearchResultsQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FD228A1525B008DB548 /* SearchResultsQueue.swift */; };
+		88D86FD628A15331008DB548 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D86FD528A15331008DB548 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +37,7 @@
 		88D86FB428A138BE008DB548 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		88D86FBE28A13A52008DB548 /* city_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city_list.json; sourceTree = "<group>"; };
 		88D86FC128A13B3A008DB548 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		88D86FC328A13CEC008DB548 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		88D86FC328A13CEC008DB548 /* DefaultHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHomeViewModel.swift; sourceTree = "<group>"; };
 		88D86FC528A13CFF008DB548 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		88D86FC728A13D35008DB548 /* CityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityRepository.swift; sourceTree = "<group>"; };
 		88D86FC928A1405C008DB548 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		88D86FCE28A14272008DB548 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		88D86FD028A14286008DB548 /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
 		88D86FD228A1525B008DB548 /* SearchResultsQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsQueue.swift; sourceTree = "<group>"; };
+		88D86FD528A15331008DB548 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		88D86FB628A13962008DB548 /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
+				88D86FD428A1531F008DB548 /* Protocol */,
 				88D86FB928A139C0008DB548 /* View */,
 				88D86FB828A139A7008DB548 /* Model */,
 			);
@@ -116,7 +119,7 @@
 		88D86FB828A139A7008DB548 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				88D86FC328A13CEC008DB548 /* HomeViewModel.swift */,
+				88D86FC328A13CEC008DB548 /* DefaultHomeViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -134,8 +137,7 @@
 		88D86FBA28A139EF008DB548 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				88D86FC528A13CFF008DB548 /* City.swift */,
-				88D86FC728A13D35008DB548 /* CityRepository.swift */,
+				88D86FD728A1534A008DB548 /* City */,
 				88D86FCB28A1406E008DB548 /* ApplicationCoordinator.swift */,
 				88D86FD228A1525B008DB548 /* SearchResultsQueue.swift */,
 			);
@@ -167,6 +169,23 @@
 				88D86FD028A14286008DB548 /* CityCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		88D86FD428A1531F008DB548 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				88D86FD528A15331008DB548 /* HomeViewModel.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		88D86FD728A1534A008DB548 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				88D86FC528A13CFF008DB548 /* City.swift */,
+				88D86FC728A13D35008DB548 /* CityRepository.swift */,
+			);
+			path = City;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,8 +268,9 @@
 				88D86FA028A13729008DB548 /* AppDelegate.swift in Sources */,
 				88D86FC628A13CFF008DB548 /* City.swift in Sources */,
 				88D86FC228A13B3A008DB548 /* ViewModel.swift in Sources */,
+				88D86FD628A15331008DB548 /* HomeViewModel.swift in Sources */,
 				88D86FCC28A1406E008DB548 /* ApplicationCoordinator.swift in Sources */,
-				88D86FC428A13CEC008DB548 /* HomeViewModel.swift in Sources */,
+				88D86FC428A13CEC008DB548 /* DefaultHomeViewModel.swift in Sources */,
 				88D86FA228A13729008DB548 /* SceneDelegate.swift in Sources */,
 				88D86FC828A13D35008DB548 /* CityRepository.swift in Sources */,
 			);
